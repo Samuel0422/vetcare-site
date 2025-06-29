@@ -1,0 +1,234 @@
+/* =======================  VARIABLES  ======================= */
+:root {
+  --primary: #d413b4;
+  --secondary: #18bc9c;
+  --accent: #f39c12;
+}
+
+/* =======================  BASE  ============================ */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+/* colores generales */
+.bg-primary {
+  background-color: var(--primary) !important;
+}
+
+.text-accent {
+  color: var(--accent) !important;
+}
+
+.btn-accent {
+  background-color: var(--accent);
+  color: #fff;
+  border: none;
+}
+
+.btn-accent:hover,
+.btn-accent:focus {
+  background-color: #d9820f;
+  color: #fff;
+}
+
+/* =======================  NAVBAR  ========================== */
+.navbar-nav .nav-link {
+  color: #fff;
+  font-weight: 500;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+  color: var(--accent);
+}
+
+/* =======================  HERO  ============================ */
+.hero-section {
+  position: relative;
+  height: 80vh;
+  min-height: 500px;
+  background: url("https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=1600&q=80")
+    center/cover no-repeat;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(44, 62, 80, 0.6);
+  padding: 0 1rem;
+}
+
+@media (max-width: 575.98px) {
+  .hero-section {
+    height: 60vh;
+  }
+}
+
+/* =======================  SECCIONES  ======================= */
+section h2 {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+/* =======================  CARDS  =========================== */
+.card {
+  border: none;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+/* Servicio cards */
+.service-card img {
+  object-fit: cover;
+  height: 220px;
+}
+
+/* Equipo */
+.team-card {
+  border-radius: 0.75rem;
+  background: #fff;
+}
+
+.team-img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid var(--secondary);
+  animation: heartbeat 2s infinite;
+}
+
+/* Testimonios */
+.testimonial-card {
+  border-radius: 1rem;
+  position: relative;
+  overflow: hidden;
+  padding: 10px;
+}
+
+.testimonial-card::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(
+    60deg,
+    red,
+    orange,
+    yellow,
+    green,
+    blue,
+    indigo,
+    violet,
+    red
+  );
+  background-size: 400%;
+  animation: rainbow 10s linear infinite;
+  z-index: -1;
+}
+
+.testimonial-card::after {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  background: #fff;
+  border-radius: inherit;
+  z-index: -1;
+}
+
+.client-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 3px solid var(--accent);
+  object-fit: cover;
+  animation: heartbeat 2.5s infinite;
+  margin: 15px;
+}
+
+/* Contacto */
+.contact-card {
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.contact-card:hover {
+  transform: translateY(-6px);
+}
+
+/* WhatsApp button */
+.btn-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+/* Carousel custom buttons (fuera del carrusel) */
+.custom-crsl-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--secondary);
+  border: none;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  opacity: 0.9;
+  transition: opacity 0.2s;
+  z-index: 2;
+}
+
+.custom-crsl-btn:hover {
+  opacity: 1;
+}
+
+.carousel-control-prev {
+  left: -60px;
+}
+
+.carousel-control-next {
+  right: -60px;
+}
+
+/* Multiple items per slide */
+.carousel-item > .row .col-md-3 {
+  flex: 0 0 25%;
+  max-width: 25%;
+}
+
+@media (max-width: 767.98px) {
+  .carousel-item > .row .col-md-3 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+/* =======================  ANIMATIONS  ====================== */
+@keyframes heartbeat {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes rainbow {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: -400% 50%;
+  }
+}

@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Clínica Veterinaria ‑ Cuidado integral para tu mascota" />
+  <title>Clínica Veterinaria</title>
+
+  <!-- Bootstrap 5.3.0 CSS -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-9ndCyUa6mY2GQK3y1A2d8bwI4txSn1h8DjPOEdddEBxn/Mb4j2h2QNpHwNNZB9i5"
+    crossorigin="anonymous"
+  />
+  <!-- Font Awesome 6.0 -->
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    rel="stylesheet"
+    integrity="sha512-nS/2XazcgUOkJfo5UGR12o9l62P14cOLOkJc2gyZDlA6l0c8jzGx2n8czq2zcN5l3ydQrBqXzZ0wQ0Eq1AT5JQ=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  <!-- Hoja de estilos personalizada -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="80">
+  <!--===== NAVBAR ======================================================-->
+  <nav id="mainNav" class="navbar navbar-expand-lg navbar-dark fixed-top bg-primary shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#inicio">🐾 VetCare</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarResponsive"
+        aria-controls="navbarResponsive"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div id="navbarResponsive" class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto text-uppercase">
+          <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="#servicios">Servicios</a></li>
+          <li class="nav-item"><a class="nav-link" href="#equipo">Equipo</a></li>
+          <li class="nav-item"><a class="nav-link" href="#clientes">Clientes</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!--===== INICIO ======================================================-->
+  <header id="inicio" class="hero-section">
+    <div class="hero-overlay d-flex flex-column justify-content-center align-items-center text-center text-white">
+      <h1 class="display-4 fw-bold">
+        🐶🐱 Bienvenid@ a <span class="text-accent">VetCare</span>
+      </h1>
+      <p class="lead px-3">
+        Cuidamos la salud y bienestar de tus mascotas con amor, experiencia y tecnología de punta.
+      </p>
+      <a href="#contacto" class="btn btn-lg btn-accent mt-3">Solicita tu cita</a>
+    </div>
+  </header>
+
+  <main>
+    <!--===== SERVICIOS =================================================-->
+    <section id="servicios" class="py-5">
+      <div class="container">
+        <h2 class="text-center mb-5">Nuestros Servicios</h2>
+        <div class="row g-4">
+          <!-- Card 1 -->
+          <div class="col-md-4">
+            <div class="card h-100 service-card">
+              <img
+                src="https://purina.com.do/sites/default/files/2022-10/purina-consulta-veterinaria-para-mascotas-lo-que-debes-saber.jpg"
+                class="card-img-top"
+                alt="Consulta general"
+              />
+              <div class="card-body text-center">
+                <i class="fa-solid fa-stethoscope fa-2x mb-3 text-accent"></i>
+                <h5 class="card-title">Consulta General</h5>
+                <p class="card-text">
+                  Exámenes completos, vacunación y control preventivo para todas las especies domésticas.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Card 2 -->
+          <div class="col-md-4">
+            <div class="card h-100 service-card">
+              <img
+                src="https://holavet.com.ar/wp-content/uploads/2022/04/close-up-on-veterinarian-taking-care-of-pet-1.webp"
+                class="card-img-top"
+                alt="Cirugías"
+              />
+              <div class="card-body text-center">
+                <i class="fa-solid fa-syringe fa-2x mb-3 text-accent"></i>
+                <h5 class="card-title">Cirugías</h5>
+                <p class="card-text">
+                  Quirófanos de última generación y especialistas certificados para intervenciones seguras.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Card 3 -->
+          <div class="col-md-4">
+            <div class="card h-100 service-card">
+              <img
+                src="https://neozoo.com.ar/wp-content/uploads/2023/06/Iconos-e-imagenes-09.png"
+                class="card-img-top"
+                alt="Peluquería"
+              />
+              <div class="card-body text-center">
+                <i class="fa-solid fa-scissors fa-2x mb-3 text-accent"></i>
+                <h5 class="card-title">Peluquería</h5>
+                <p class="card-text">
+                  Estilismo, baños medicados y spa, todo pensado para que tu mascota luzca y se sienta genial.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--===== EQUIPO ====================================================-->
+    <section id="equipo" class="py-5 bg-light">
+      <div class="container">
+        <h2 class="text-center mb-5">Nuestro Equipo</h2>
+        <div class="row gy-4">
+          <!-- Veterinario 1 -->
+          <div class="col-md-4">
+            <div class="team-card text-center p-4">
+              <img
+                src="https://randomuser.me/api/portraits/women/45.jpg"
+                alt="Dra. Ana López"
+                class="team-img mb-3"
+              />
+              <h5 class="fw-bold">Dra. Ana López</h5>
+              <p class="text-accent mb-1">Medicina Interna</p>
+              <p>
+                Especialista en diagnóstico temprano y planes integrales de salud preventiva.
+              </p>
+            </div>
+          </div>
+          <!-- Veterinario 2 -->
+          <div class="col-md-4">
+            <div class="team-card text-center p-4">
+              <img
+                src="https://randomuser.me/api/portraits/men/75.jpg"
+                alt="Dr. Carlos Méndez"
+                class="team-img mb-3"
+              />
+              <h5 class="fw-bold">Dr. Carlos Méndez</h5>
+              <p class="text-accent mb-1">Cirujano</p>
+              <p>
+                Más de 10 años de experiencia en cirugías de tejidos blandos y traumatología.
+              </p>
+            </div>
+          </div>
+          <!-- Veterinario 3 -->
+          <div class="col-md-4">
+            <div class="team-card text-center p-4">
+              <img
+                src="https://randomuser.me/api/portraits/women/68.jpg"
+                alt="Dra. Laura Gómez"
+                class="team-img mb-3"
+              />
+              <h5 class="fw-bold">Dra. Laura Gómez</h5>
+              <p class="text-accent mb-1">Dermatóloga</p>
+              <p>
+                Amplia trayectoria en dermatología y alergias cutáneas en perros y gatos.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--===== CLIENTES ===================================================-->
+    <section id="clientes" class="py-5">
+      <div class="container">
+        <h2 class="text-center mb-5">Lo que dicen nuestros clientes</h2>
+
+        <div class="position-relative">
+          <!-- Botones externo‑izquierda -->
+          <button
+            class="carousel-control-prev custom-crsl-btn"
+            type="button"
+            data-bs-target="#clientesCarousel"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon"></span>
+          </button>
+
+          <!-- Carrusel -->
+          <div id="clientesCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <!-- Slide 1 -->
+              <div class="carousel-item active">
+                <div class="row g-4">
+                  <!-- 4 cards -->
+                  <div class="col-12 col-md-3">
+                    <div class="card h-100 testimonial-card">
+                      <div class="card-body text-center">
+                        <img src="https://randomuser.me/api/portraits/men/10.jpg" alt="Cliente 1" class="client-img mb-3" />
+                        <h6 class="fw-bold">Juan Pérez</h6>
+                        <p>
+                          “¡Excelente atención! 🐕 Mi perro salió feliz y saludable.”  
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-3">
+                    <div class="card h-100 testimonial-card">
+                      <div class="card-body text-center">
+                        <img src="https://randomuser.me/api/portraits/women/12.jpg" alt="Cliente 2" class="client-img mb-3" />
+                        <h6 class="fw-bold">María Ruiz</h6>
+                        <p>
+                          “La Dra. Ana es un encanto. 🐱 ¡Recomendado 100 %!”
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-3">
+                    <div class="card h-100 testimonial-card">
+                      <div class="card-body text-center">
+                        <img src="https://randomuser.me/api/portraits/men/23.jpg" alt="Cliente 3" class="client-img mb-3" />
+                        <h6 class="fw-bold">Pedro Gómez</h6>
+                        <p>
+                          “Servicio rápido y profesional. 💉 Mi gato se recuperó enseguida.”
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-3">
+                    <div class="card h-100 testimonial-card">
+                      <div class="card-body text-center">
+                        <img src="https://randomuser.me/api/portraits/women/30.jpg" alt="Cliente 4" class="client-img mb-3" />
+                        <h6 class="fw-bold">Laura Díaz</h6>
+                        <p>
+                          “Las instalaciones son impecables. ✨ ¡Mis mascotas felices!”
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Slide 2 -->
+              <div class="carousel-item">
+                <div class="row g-4">
+                  <div class="col-12 col-md-3">
+                    <div class="card h-100 testimonial-card">
+                      <div class="card-body text-center">
+                        <img src="https://randomuser.me/api/portraits/men/40.jpg" alt="Cliente 5" class="client-img mb-3" />
+                        <h6 class="fw-bold">Carlos Vega</h6>
+                        <p>
+                          “El Dr. Carlos operó a mi perrita. 🏥 ¡Todo un éxito!”
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-3">
+                    <div class="card h-100 testimonial-card">
+                      <div class="card-body text-center">
+                        <img src="https://randomuser.me/api/portraits/women/41.jpg" alt="Cliente 6" class="client-img mb-3" />
+                        <h6 class="fw-bold">Patricia León</h6>
+                        <p>
+                          “Me encantó el servicio de peluquería. 💇‍♀️ Mi gato quedó hermoso.”
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-3">
+                    <div class="card h-100 testimonial-card">
+                      <div class="card-body text-center">
+                        <img src="https://randomuser.me/api/portraits/men/50.jpg" alt="Cliente 7" class="client-img mb-3" />
+                        <h6 class="fw-bold">Roberto Cruz</h6>
+                        <p>
+                          “Precios justos y trato humano. 👏 ¡Gracias VetCare!”
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-3">
+                    <div class="card h-100 testimonial-card">
+                      <div class="card-body text-center">
+                        <img src="https://randomuser.me/api/portraits/women/52.jpg" alt="Cliente 8" class="client-img mb-3" />
+                        <h6 class="fw-bold">Elena Martí</h6>
+                        <p>
+                          “Atención 24 h que realmente responde. ⏰ ¡Salvó a mi cachorro!”
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Slide 3 -->
+              <div class="carousel-item">
+                <div class="row g-4">
+                  <div class="col-12 col-md-3">
+                    <div class="card h-100 testimonial-card">
+                      <div class="card-body text-center">
+                        <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="Cliente 9" class="client-img mb-3" />
+                        <h6 class="fw-bold">Santiago Peña</h6>
+                        <p>
+                          “Tecnología de primera. 🩺 ¡Gran diagnóstico!”
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-3">
+                    <div class="card h-100 testimonial-card">
+                      <div class="card-body text-center">
+                        <img src="https://randomuser.me/api/portraits/women/66.jpg" alt="Cliente 10" class="client-img mb-3" />
+                        <h6 class="fw-bold">Gabriela Cortés</h6>
+                        <p>
+                          “Equipo amable y empático. ❤️ ¡Volveré sin duda!”
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Espacios vacíos para mantener 4 columnas -->
+                  <div class="col-12 col-md-3 d-none d-md-block"></div>
+                  <div class="col-12 col-md-3 d-none d-md-block"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Botón externo‑derecha -->
+          <button
+            class="carousel-control-next custom-crsl-btn"
+            type="button"
+            data-bs-target="#clientesCarousel"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon"></span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!--===== CONTACTO ==================================================-->
+    <section id="contacto" class="py-5 bg-light">
+      <div class="container">
+        <h2 class="text-center mb-4">Contacto</h2>
+
+        <div class="row g-4">
+          <!-- Teléfono & WhatsApp -->
+          <div class="col-md-4">
+            <div class="contact-card p-4 h-100 text-center">
+              <p class="fs-4 mb-2 fw-bold">
+                <i class="fa-solid fa-phone me-2 text-accent"></i>
+                <a href="tel:+18095551234" class="text-decoration-none">+1 809 555‑1234</a>
+              </p>
+              <a
+                href="https://wa.me/18095551234"
+                target="_blank"
+                rel="noopener"
+                class="btn btn-success btn-whatsapp"
+              >
+                <i class="fa-brands fa-whatsapp me-2"></i>Escríbenos por WhatsApp
+              </a>
+            </div>
+          </div>
+
+          <!-- Formulario -->
+          <div class="col-md-8">
+            <form id="contactForm" novalidate>
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label for="name" class="form-label" placeholder="Ingresa tu nombre">Nombre</label>
+                  <input type="text" id="name" class="form-control" required placeholder="Ingresa tu nombre"/>
+                  <div class="invalid-feedback"></div>
+                </div>
+                <div class="col-md-6">
+                  <label for="email" class="form-label">Correo electrónico</label>
+                  <input type="email" id="email" class="form-control" required placeholder="Ingresa tu correo"/>
+                  <div class="invalid-feedback"></div>
+                </div>
+                <div class="col-12">
+                  <label for="message" class="form-label">Mensaje</label>
+                  <textarea id="message" class="form-control" rows="4" required></textarea>
+                  <div class="invalid-feedback">Cuéntanos en qué podemos ayudarte.</div>
+                </div>
+              </div>
+              <button type="submit" class="btn btn-accent mt-3">Enviar</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!--===== FOOTER ======================================================-->
+  <footer class="py-4 bg-primary text-white">
+    <div class="container text-center small">
+      <div class="mb-2">
+        <a href="#" class="text-white me-3"><i class="fa-brands fa-facebook fa-lg"></i></a>
+        <a href="#" class="text-white me-3"><i class="fa-brands fa-instagram fa-lg"></i></a>
+        <a href="#" class="text-white me-3"><i class="fa-brands fa-twitter fa-lg"></i></a>
+        <a href="#" class="text-white me-3"><i class="fa-brands fa-linkedin fa-lg"></i></a>
+        <a href="#" class="text-white"><i class="fa-brands fa-youtube fa-lg"></i></a>
+      </div>
+      <p class="mb-1">Av. Winston Churchill 123, Santo Domingo · Lun‑Dom 8:00 a 22:00</p>
+      <p class="mb-0">&copy; 2025 VetCare · Todos los derechos reservados</p>
+    </div>
+  </footer>
+
+  <!--===== MODAL CONFIRMACIÓN ==========================================-->
+  <div
+    class="modal fade"
+    id="confirmModal"
+    tabindex="-1"
+    aria-labelledby="confirmModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header bg-success text-white">
+          <h5 class="modal-title" id="confirmModalLabel"> 📧</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          Gracias por contactarnos. Nuestro equipo responderá lo antes posible. 🐾
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap 5.3.0 JS -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-QJHtvGhmr9b1eA2JD1QFS2iN1IS3e7oO3h39G2eDJCpAFz2n5NCDcJ7BBmR92kP9"
+    crossorigin="anonymous"
+  ></script>
+  <!-- Script personalizado -->
+  <script src="script.js"></script>
+</body>
+</html>
