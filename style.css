@@ -1,234 +1,479 @@
-/* =======================  VARIABLES  ======================= */
+/* Variables CSS (Modo Claro - Por defecto) */
 :root {
-  --primary: #d413b4;
-  --secondary: #18bc9c;
-  --accent: #f39c12;
+    --primary-color: #2C3E50; /* Azul oscuro - para textos principales y algunos fondos */
+    --secondary-color: #18BC9C; /* Verde turquesa - para acentos, bordes, etc. */
+    --accent-color: #F39C12; /* Naranja vibrante - para botones de acción y énfasis */
+
+    /* Colores generales del tema */
+    --bg-color: #f8f9fa; /* Fondo principal de la página (crema claro) */
+    --text-color: #212529; /* Color de texto general (negro casi oscuro) */
+    --heading-color: var(--primary-color); /* Color de los títulos */
+    --navbar-bg: var(--primary-color); /* Fondo de la barra de navegación */
+    --card-bg: white; /* Fondo de las tarjetas */
+    --border-color: rgba(0, 0, 0, 0.1); /* Color de bordes y separadores */
+    --box-shadow-color: rgba(0, 0, 0, 0.15); /* Color de las sombras */
+    --button-primary-bg: var(--primary-color); /* Fondo de botones primarios */
+    --button-primary-text: white; /* Texto de botones primarios */
+    --button-accent-bg: var(--accent-color); /* Fondo de botones de acento */
+    --button-accent-text: white; /* Texto de botones de acento */
+    --footer-bg: var(--primary-color); /* Fondo del pie de página */
+    --input-bg: white; /* Fondo de los campos de entrada */
+    --input-text: #212529; /* Color de texto de los campos de entrada */
+    --icon-color: var(--primary-color); /* Color general de los iconos */
+    --link-color: var(--secondary-color); /* Color de los enlaces */
+    --muted-text-color: #6c757d; /* Texto "muted" de Bootstrap */
+    --section-bg-light: #f8f9fa; /* Color original de bg-light para secciones */
+
+    /* Transición suave para el cambio de tema */
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* =======================  BASE  ============================ */
-html {
-  scroll-behavior: smooth;
+/* Variables del Modo Oscuro - Sobreescribe los valores por defecto cuando body tiene 'dark-mode' */
+body.dark-mode {
+    --primary-color: #48da35;   /* Verde brillante para elementos primarios en modo oscuro */
+    --secondary-color: #7d853a; /* Rojo vibrante para acentos en modo oscuro (como el borde del cliente) */
+    --accent-color: #84ff6bbb;  /* Verde claro brillante para acentos */
+
+    /* Colores generales del tema en modo oscuro */
+    --bg-color: #121212; /* Fondo principal muy oscuro */
+    --text-color: #E0E0E0; /* Texto gris claro para contraste */
+    --heading-color: var(--primary-color); /* Los títulos ahora son el verde brillante */
+    --navbar-bg: #1a1a1a; /* Navbar más oscuro */
+    --card-bg: #1f1f1f; /* Fondo de las tarjetas más oscuro */
+    --border-color: rgba(0, 247, 255, 0.7); /* Borde/sombra con un tono rojizo */
+    --box-shadow-color: rgba(0, 162, 255, 0.4); /* Sombras con tono rojizo */
+    --button-primary-bg: var(--secondary-color); /* Botón primario ahora rojo */
+    --button-primary-text: white; /* Texto blanco para botones */
+    --button-accent-bg: var(--accent-color); /* Botón de acento ahora verde claro */
+    --button-accent-text: #1a1a1a; /* Texto oscuro para contraste en botón verde claro */
+    --footer-bg: #1a1a1a; /* Footer más oscuro */
+    --input-bg: #2b2b2b; /* Campos de entrada más oscuros */
+    --input-text: #ffffff; /* Texto de entrada blanco */
+    --icon-color: #ffffff; /* Iconos blancos */
+    --link-color: var(--accent-color); /* Enlaces ahora verde claro */
+    --muted-text-color: #999999; /* Texto "muted" más claro para modo oscuro */
+    --section-bg-light: #1a1a1a; /* Un gris oscuro para las secciones "claras" en dark mode */
 }
 
+/* --- Estilos Generales y Uso de Variables --- */
 body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color); /* Aplica el color de texto del tema */
+    padding-top: 56px;
+    background-color: var(--bg-color); /* Aplica el color de fondo del tema a TODO el body */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave */
 }
 
-/* colores generales */
-.bg-primary {
-  background-color: var(--primary) !important;
+/* Scroll Suave */
+html {
+    scroll-behavior: smooth;
 }
 
-.text-accent {
-  color: var(--accent) !important;
+/* Navbar */
+.navbar {
+    background-color: var(--navbar-bg) !important; /* Asegura que el navbar use la variable */
+    transition: background-color 0.3s ease;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    color: var(--secondary-color) !important; /* Usa variable para el color de la marca */
+}
+
+.nav-link {
+    color: var(--text-color) !important; /* Usa variable para el color de los enlaces de nav */
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--accent-color) !important; /* Usa variable para el hover de enlaces de nav */
+}
+
+/* Botón de Dark Mode */
+.navbar .btn-outline-light {
+    border-color: var(--text-color); /* Borde adaptable al tema */
+    color: var(--text-color); /* Color de texto adaptable al tema */
+    transition: all 0.3s ease;
+}
+.navbar .btn-outline-light:hover {
+    background-color: var(--accent-color); /* Fondo al hover adaptable */
+    border-color: var(--accent-color); /* Borde al hover adaptable */
+    color: var(--button-accent-text); /* Texto al hover adaptable */
+}
+.navbar .btn-outline-light i {
+    color: var(--icon-color); /* Icono adaptable al tema */
+    transition: color 0.3s ease;
+}
+
+/* Sección Hero (Inicio) */
+.hero-section {
+    /* Mantengo la imagen de fondo y el degradado para que sea consistente en ambos modos */
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1583337130417-3346a1be7dee') no-repeat center center/cover;
+    min-height: 70vh;
+    padding: 100px 0;
+    color: white; /* El texto en el hero siempre blanco para contraste con la imagen */
+}
+
+.hero-section h1 {
+    font-size: 3.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-section p {
+    font-size: 1.25rem;
+    max-width: 700px;
+    margin: 0 auto 30px;
+}
+
+/* Botones */
+.btn-primary {
+    background-color: var(--button-primary-bg); /* Usa variable para el fondo */
+    border-color: var(--button-primary-bg); /* Usa variable para el borde */
+    color: var(--button-primary-text); /* Usa variable para el texto */
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-primary:hover {
+    filter: brightness(85%); /* Oscurece ligeramente al pasar el ratón */
+    border-color: filter(brightness(85%));
 }
 
 .btn-accent {
-  background-color: var(--accent);
-  color: #fff;
-  border: none;
+    background-color: var(--button-accent-bg); /* Usa variable para el fondo */
+    border-color: var(--button-accent-bg); /* Usa variable para el borde */
+    color: var(--button-accent-text); /* Usa variable para el texto */
+    transition: all 0.3s ease;
 }
 
-.btn-accent:hover,
-.btn-accent:focus {
-  background-color: #d9820f;
-  color: #fff;
+.btn-accent:hover {
+    filter: brightness(85%); /* Oscurece ligeramente al pasar el ratón */
+    border-color: filter(brightness(85%));
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px var(--box-shadow-color);
 }
 
-/* =======================  NAVBAR  ========================== */
-.navbar-nav .nav-link {
-  color: #fff;
-  font-weight: 500;
+/* Botón de WhatsApp (color fijo por ser una marca) */
+.btn-success {
+    background-color: #25D366 !important;
+    border-color: #25D366 !important;
+    color: white !important;
+    transition: all 0.3s ease;
 }
 
-.navbar-nav .nav-link:hover,
-.navbar-nav .nav-link.active {
-  color: var(--accent);
+.btn-success:hover {
+    background-color: #1DA851 !important;
+    border-color: #1DA851 !important;
+    transform: scale(1.05);
 }
 
-/* =======================  HERO  ============================ */
-.hero-section {
-  position: relative;
-  height: 80vh;
-  min-height: 500px;
-  background: url("https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=1600&q=80")
-    center/cover no-repeat;
+/* Secciones Generales */
+section {
+    padding: 60px 0;
+    transition: background-color 0.3s ease;
 }
 
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(44, 62, 80, 0.6);
-  padding: 0 1rem;
+/* Fondos específicos para secciones, usando variables */
+#servicios, #clientes {
+    background-color: var(--bg-color); /* Estas secciones tomarán el color de fondo principal */
 }
 
-@media (max-width: 575.98px) {
-  .hero-section {
-    height: 60vh;
-  }
+#equipo, #contacto {
+    background-color: var(--section-bg-light); /* Para estas secciones que originalmente eran 'bg-light' */
 }
 
-/* =======================  SECCIONES  ======================= */
 section h2 {
-  color: var(--primary);
-  font-weight: 700;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+    color: var(--heading-color); /* Títulos usan la variable */
+    transition: color 0.3s ease;
 }
 
-/* =======================  CARDS  =========================== */
+section h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: var(--accent-color); /* Línea debajo del título usa la variable de acento */
+    border-radius: 2px;
+    transition: background-color 0.3s ease;
+}
+
+/* Tarjetas (Servicios, Equipo, Clientes) */
 .card {
-  border: none;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s;
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease; /* Añadido color a la transición */
+    background-color: var(--card-bg); /* Fondo de la tarjeta usa la variable */
+    color: var(--text-color); /* Texto de la tarjeta usa la variable */
 }
 
 .card:hover {
-  transform: translateY(-4px);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px var(--box-shadow-color); /* Sombra de la tarjeta usa la variable */
 }
 
-/* Servicio cards */
-.service-card img {
-  object-fit: cover;
-  height: 220px;
+.card-img-top {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
 }
 
-/* Equipo */
-.team-card {
-  border-radius: 0.75rem;
-  background: #fff;
+.service-card .card-img-top {
+    object-position: center top;
 }
 
-.team-img {
-  width: 120px;
-  height: 120px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 4px solid var(--secondary);
-  animation: heartbeat 2s infinite;
+/* Sección Equipo */
+.team-card .card-img-top {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border: 4px solid var(--secondary-color); /* Borde de imagen de equipo usa la variable */
+    box-shadow: 0 4px 8px var(--box-shadow-color); /* Sombra de imagen de equipo usa la variable */
+}
+.team-card .card-subtitle.text-muted {
+    color: var(--muted-text-color) !important; /* Asegura que el subtítulo use la variable */
+    transition: color 0.3s ease;
 }
 
-/* Testimonios */
-.testimonial-card {
-  border-radius: 1rem;
-  position: relative;
-  overflow: hidden;
-  padding: 10px;
+/* Sección Clientes */
+.customer-card {
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 5px 15px var(--box-shadow-color); /* Sombra de la tarjeta de cliente usa la variable */
+    position: relative;
+    overflow: hidden;
+    background-color: var(--card-bg); /* Fondo de la tarjeta de cliente usa la variable */
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.testimonial-card::before {
-  content: "";
-  position: absolute;
-  inset: -2px;
-  background: linear-gradient(
-    60deg,
-    red,
-    orange,
-    yellow,
-    green,
-    blue,
-    indigo,
-    violet,
-    red
-  );
-  background-size: 400%;
-  animation: rainbow 10s linear infinite;
-  z-index: -1;
+/* Borde animado del cliente (adaptado a dark mode) */
+.customer-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: linear-gradient(45deg, #FF6B6B, #FFA500, #FFD700, #ADFF2F, #1E90FF, #8A2BE2); /* Colores originales para light mode */
+    background-size: 400% 400%;
+    animation: rainbowBorder 8s ease infinite;
+    border-radius: 15px;
+    padding: 3px;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+            mask-composite: exclude;
 }
 
-.testimonial-card::after {
-  content: "";
-  position: absolute;
-  inset: 4px;
-  background: #fff;
-  border-radius: inherit;
-  z-index: -1;
+/* Redefinir el borde animado para dark mode */
+body.dark-mode .customer-card::before {
+    background: linear-gradient(45deg, var(--secondary-color), var(--button-primary-bg), var(--primary-color), var(--accent-color), #2196F3, #9C27B0); /* Nuevos colores para dark mode */
+    background-size: 400% 400%;
+    animation: rainbowBorderDark 8s ease infinite; /* Usar otra animación si los keyframes son distintos */
 }
 
-.client-img {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  border: 3px solid var(--accent);
-  object-fit: cover;
-  animation: heartbeat 2.5s infinite;
-  margin: 15px;
+@keyframes rainbowBorder {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+@keyframes rainbowBorderDark {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
-/* Contacto */
-.contact-card {
-  background: #fff;
-  border-radius: 1rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s;
+
+.customer-img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--secondary-color); /* Borde de la imagen de cliente usa la variable */
+    box-shadow: 0 2px 5px var(--box-shadow-color); /* Sombra de la imagen de cliente usa la variable */
 }
 
-.contact-card:hover {
-  transform: translateY(-6px);
+.heart-beat-animation {
+    animation: heartbeat 1.5s infinite;
+    color: #FF6B6B; /* Mantiene el color fijo para el corazón */
 }
 
-/* WhatsApp button */
-.btn-whatsapp {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.3rem;
-}
-
-/* Carousel custom buttons (fuera del carrusel) */
-.custom-crsl-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: var(--secondary);
-  border: none;
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  opacity: 0.9;
-  transition: opacity 0.2s;
-  z-index: 2;
-}
-
-.custom-crsl-btn:hover {
-  opacity: 1;
-}
-
-.carousel-control-prev {
-  left: -60px;
-}
-
-.carousel-control-next {
-  right: -60px;
-}
-
-/* Multiple items per slide */
-.carousel-item > .row .col-md-3 {
-  flex: 0 0 25%;
-  max-width: 25%;
-}
-
-@media (max-width: 767.98px) {
-  .carousel-item > .row .col-md-3 {
-    flex: 0 0 100%;
-    max-width: 100%;
-  }
-}
-
-/* =======================  ANIMATIONS  ====================== */
 @keyframes heartbeat {
-  0%,
-  100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.1);
-  }
+    0% { transform: scale(1); }
+    15% { transform: scale(1.1); }
+    30% { transform: scale(1); }
+    45% { transform: scale(1.1); }
+    60% { transform: scale(1); }
+    100% { transform: scale(1); }
 }
 
-@keyframes rainbow {
-  0% {
-    background-position: 0% 50%;
-  }
-  100% {
-    background-position: -400% 50%;
-  }
+#customerCarousel .carousel-control-prev,
+#customerCarousel .carousel-control-next {
+    width: 5%;
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.3); /* Color fijo o variable si quieres que cambie */
+    border-radius: 5px;
+}
+
+#customerCarousel .carousel-control-prev {
+    left: -60px;
+}
+
+#customerCarousel .carousel-control-next {
+    right: -60px;
+}
+
+/* Media query para carrusel en pantallas pequeñas */
+@media (max-width: 991.98px) {
+    #customerCarousel .carousel-control-prev,
+    #customerCarousel .carousel-control-next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 10%;
+        left: 0;
+        right: 0;
+    }
+    #customerCarousel .carousel-control-prev {
+        left: 0;
+    }
+    #customerCarousel .carousel-control-next {
+        right: 0;
+    }
+}
+
+
+/* Sección Contacto */
+.contact-card {
+    background-color: var(--card-bg); /* Fondo de la tarjeta de contacto usa la variable */
+    border-radius: 15px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    color: var(--text-color); /* Texto de la tarjeta de contacto usa la variable */
+}
+.contact-card .text-primary { /* Títulos dentro de la tarjeta de contacto */
+    color: var(--primary-color) !important; /* Usa la variable primaria */
+    transition: color 0.3s ease;
+}
+
+.phone-number-box {
+    background-color: var(--secondary-color); /* Fondo del cuadro de teléfono usa la variable */
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    box-shadow: 0 5px 15px var(--box-shadow-color); /* Sombra del cuadro de teléfono usa la variable */
+    transition: all 0.3s ease, background-color 0.3s ease;
+}
+
+.phone-number-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px var(--box-shadow-color);
+}
+
+.phone-number-box a {
+    color: var(--button-primary-text) !important; /* Texto del número de teléfono usa la variable */
+}
+
+/* Campos de Formulario */
+.form-label {
+    color: var(--text-color); /* Etiquetas de formulario usan la variable */
+    transition: color 0.3s ease;
+}
+.form-control {
+    background-color: var(--input-bg); /* Fondo de entrada usa la variable */
+    color: var(--input-text); /* Texto de entrada usa la variable */
+    border: 1px solid var(--border-color); /* Borde de entrada usa la variable */
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+.form-control:focus {
+    border-color: var(--secondary-color); /* Borde al enfocar usa la variable secundaria */
+    box-shadow: 0 0 0 0.25rem rgba(24, 188, 156, 0.25); /* Sombra de enfoque predeterminada de Bootstrap */
+}
+/* Ajustar sombra de enfoque para dark mode */
+body.dark-mode .form-control:focus {
+    box-shadow: 0 0 0 0.25rem rgba(72, 218, 53, 0.25); /* Sombra verdosa para dark mode */
+}
+
+
+/* Footer */
+footer {
+    background-color: var(--footer-bg) !important; /* Fondo del footer usa la variable */
+    color: var(--button-primary-text); /* Texto del footer usa la variable */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+footer .fab {
+    color: var(--icon-color); /* Iconos sociales usan la variable */
+    transition: color 0.3s ease;
+}
+
+footer .fab:hover {
+    color: var(--accent-color); /* Hover de iconos sociales usa la variable de acento */
+}
+
+/* Modal */
+.modal-content {
+    background-color: var(--card-bg); /* Fondo del contenido del modal usa la variable de tarjeta */
+    color: var(--text-color); /* Texto del modal usa la variable de texto */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+.modal-header {
+    background-color: var(--navbar-bg); /* Fondo del encabezado del modal usa la variable de navbar */
+    color: var(--button-primary-text); /* Color del título del modal usa la variable */
+    border-bottom: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.modal-header .btn-close {
+    filter: invert(1); /* Mantiene el botón de cerrar visible en fondos oscuros */
+}
+
+.modal-body {
+    /* Ya hereda de .modal-content, no necesita más estilos aquí */
+}
+
+.modal-footer {
+    background-color: var(--card-bg); /* Fondo del pie del modal usa la variable de tarjeta */
+    border-top: none;
+    transition: background-color 0.3s ease;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+    .hero-section p {
+        font-size: 1rem;
+    }
+    section h2 {
+        font-size: 2rem;
+    }
+    .phone-number-box a {
+        font-size: 1.8rem !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+    .hero-section {
+        min-height: 60vh;
+    }
+    .phone-number-box a {
+        font-size: 1.5rem !important;
+    }
+    .customer-card {
+        margin-bottom: 15px;
+    }
 }
